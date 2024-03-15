@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="loginViewModel"
+            type="com.beginnerpurpose.allinone.viewmodels.register.LoginViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingHorizontal="20dp"
+        tools:context=".fragments.register.Login"
+        android:id="@+id/loginLayout"
+        android:background="@drawable/bg_bottom_right">
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/usernameLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:hint="@string/username"
+            app:startIconDrawable="@drawable/ic_username"
+            app:startIconTint="@color/ic_register"
+            app:endIconMode="clear_text"
+            app:hintTextColor="@color/text_register"
+            android:textColorHint="@color/text_register"
+            app:boxStrokeColor="@color/stroke"
+            app:errorEnabled="true"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintVertical_bias="0.18">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/loginUsername"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textPersonName"
+                checkEmptyField="@{usernameLayout}"
+                android:fontFamily="sans-serif-medium"
+                android:text="@={loginViewModel.MUsername}"
+                android:maxLength="16"
+                android:textColor="@color/text_register"
+                android:textSize="19sp" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/passwordLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:hint="@string/password"
+            app:startIconDrawable="@drawable/ic_password"
+            app:startIconTint="@color/ic_register"
+            app:endIconMode="password_toggle"
+            app:endIconTint="@color/ic_register"
+            app:hintTextColor="@color/text_register"
+            android:textColorHint="@color/text_register"
+            app:boxStrokeColor="@color/stroke"
+            app:errorEnabled="true"
+            app:layout_constraintStart_toStartOf="@id/usernameLayout"
+            app:layout_constraintTop_toBottomOf="@id/usernameLayout">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/loginPassword"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif-medium"
+                checkEmptyField="@{passwordLayout}"
+                android:inputType="textPassword"
+                android:text="@={loginViewModel.MPassword}"
+                android:textColor="@color/text_register"
+                android:textSize="19sp" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <CheckBox
+            android:id="@+id/rememberBox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:buttonTint="@color/stroke"
+            android:textColor="@color/text_register"
+            android:fontFamily="sans-serif-medium"
+            android:text="@string/remember"
+            app:layout_constraintTop_toBottomOf="@id/passwordLayout"
+            app:layout_constraintStart_toStartOf="parent"/>
+
+        <android.widget.Button
+            android:id="@+id/buttonLogin"
+            android:layout_width="110dp"
+            android:layout_height="40dp"
+            android:background="@drawable/custom_button_first"
+            android:onClick="@{() -> loginViewModel.pressLoginButton()}"
+            android:text="@string/login"
+            android:textColor="@color/white"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/rememberBox" />
+
+        <TextView
+            android:id="@+id/constantText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/or"
+            android:textSize="12sp"
+            android:textColor="@color/text_register"
+            android:fontFamily="sans-serif-medium"
+            app:layout_constraintTop_toBottomOf="@id/buttonLogin"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintVertical_bias="0.4"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+        <android.widget.Button
+            android:id="@+id/buttonSignup"
+            android:layout_width="110dp"
+            android:layout_height="40dp"
+            android:background="@drawable/custom_button_second"
+            android:text="@string/signup"
+            android:textColor="@color/white"
+            android:onClick="@{() -> loginViewModel.pressSignUpButton()}"
+            app:layout_constraintTop_toBottomOf="@id/constantText"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintVertical_bias="0.05"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

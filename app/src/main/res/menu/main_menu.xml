@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:title="Home">
+        <menu>
+            <item android:id="@+id/listFragment"
+                android:title="List"/>
+            <item android:id="@+id/medicListFragment"
+                android:title="Medics"/>
+            <item android:id="@+id/scheduleList"
+                android:title="My Appointment"/>
+            <item android:id="@+id/fdsfsd"
+                android:title="List"/>
+            <item android:id="@+id/fdfsdfsdfsd"
+                android:title="Medics"/>
+            <item android:id="@+id/fdfsdfdsfsd"
+                android:title="My Appointment"/>
+            <item android:id="@+id/gfgdfgfd"
+                android:title="List"/>
+            <item android:id="@+id/rewrwerwerwe"
+                android:title="Medics"/>
+            <item android:id="@+id/schedufdsfsdfleList"
+                android:title="My Appointment"/>
+            <item android:id="@+id/listFrrewrweagment"
+                android:title="List"/>
+            <item android:id="@+id/medicLisfdsfstFragment"
+                android:title="Medics"/>
+            <item android:id="@+id/schedulrewrweList"
+                android:title="My Appointment"/>
+            <item android:id="@+id/listFrewragment"
+                android:title="List"/>
+            <item android:id="@+id/medicLis432tFragment"
+                android:title="Medics"/>
+            <item android:id="@+id/schedulfsdeList"
+                android:title="My Appointment"/>
+            <item android:id="@+id/listFrarewgment"
+                android:title="List"/>
+            <item android:id="@+id/medicList432Fragment"
+                android:title="Medics"/>
+            <item android:id="@+id/schedrweuleList"
+                android:title="My Appointment"/>
+        </menu>
+    </item>
+</menu>
